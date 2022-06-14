@@ -13,5 +13,21 @@ public class CircularSinglyLinkedList{
     size=1;
     return head;
   }
+
+  public void insertNode(int nodeValue,int location){
+    Node node=new Node();
+    node.value=nodeValue;
+    if(head==null){
+      createCSLL(nodeValue);
+      return;
+    }
+    else if(location==0){
+      node.next=head;
+      head=node;
+      tail.next=head; 
+      }
+      
+    
+  }
   
 }
