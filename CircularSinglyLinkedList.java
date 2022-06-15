@@ -26,8 +26,20 @@ public class CircularSinglyLinkedList{
       head=node;
       tail.next=head; 
       }
-      
-    
+    else if(location>=size){
+      tail.next=node;
+      node.next=head;
+      tail=node;
+    }
+    else{
+      Node tempNode=new Node();
+      for(int i=0;i<location-1;i++){
+        tempNode=tempNode.next;
+      }
+      node.next=tempNode.next;
+      tempNode.next=node;
+    }
+      size++;
   }
   
 }
