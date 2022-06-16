@@ -18,7 +18,7 @@ public class CircularSinglyLinkedList{
     Node node=new Node();
     node.value=nodeValue;
     if(head==null){
-      createCSLL(nodeValue);
+      createCSLL(nodeValue); //to create CSLL in case of no node
       return;
     }
     else if(location==0){
@@ -41,5 +41,9 @@ public class CircularSinglyLinkedList{
     }
       size++;
   }
-  
+  public void traverseCSLL(){
+    if(head!=null){
+    Node temp Node=new Node();
+    }
+  }
 }
