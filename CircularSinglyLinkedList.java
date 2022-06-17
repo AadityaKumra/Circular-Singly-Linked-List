@@ -43,7 +43,18 @@ public class CircularSinglyLinkedList{
   }
   public void traverseCSLL(){
     if(head!=null){
-    Node temp Node=new Node();
+      Node tempNode=head;
+      for(int i=0;i<size;i++){
+        System.out.print(tempNode.value);
+        if(i!=size-1){
+          System.out.print("->");
+        }
+        tempNode=tempNode.next;
+      }
     }
-  }
+      else{
+      System.out.println("CSLL doesn't exist");
+      }
+       
+    }
 }

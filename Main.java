@@ -9,5 +9,6 @@ class Main {
     csll.insertNode(4,1);
     csll.insertNode(4,8);
     System.out.println(csll.head.value);
+    csll.traverseCSLL();
   }
 }
