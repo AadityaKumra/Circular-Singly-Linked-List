@@ -7,8 +7,9 @@ class Main {
     // System.out.println(csll.head.next.value);
     csll.insertNode(4,0);
     csll.insertNode(4,1);
-    csll.insertNode(4,8);
+    csll.insertNode(9,8);
     System.out.println(csll.head.value);
     csll.traverseCSLL();
+    csll.searchNode(10);
   }
 }
