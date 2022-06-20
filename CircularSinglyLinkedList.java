@@ -32,7 +32,7 @@ public class CircularSinglyLinkedList{
       tail=node;
     }
     else{
-      Node tempNode=new Node();
+      Node tempNode=head;
       for(int i=0;i<location-1;i++){
         tempNode=tempNode.next;
       }
@@ -46,10 +46,10 @@ public class CircularSinglyLinkedList{
       Node tempNode=head;
       for(int i=0;i<size;i++){
         System.out.print(tempNode.value);
-        if(i!=size-1){
-          System.out.print("->");
-        }
         tempNode=tempNode.next;
+        if(i!=size-1){
+          System.out.print(" -> ");
+        }
       }
       System.out.println("");
     }
@@ -76,6 +76,61 @@ public class CircularSinglyLinkedList{
     else{
       System.out.println("csll doesn't exist");
       return false;
+    }
+  }
+  public void deleteNode(int location){
+    if(head==null){
+      System.out.println("CSLL does not exist.");
+      return;
+    }
+    else if(location==0){
+      head=head.next;
+      tail.next=head;
+      size--;
+      if(size==0){
+        tail=null;
+        head.next=null;
+        head=null;
+      }
+    }
+    else if(location>=size){
+      Node tempNode=head;
+      for(int i=0;i<size-1;i++){
+        tempNode=tempNode.next;
+      }
+      //if only one element in csll
+      if(tempNode==head){
+        head.next=null;
+        head=null;
+        size--;
+        return;
+      }
+      tempNode.next=head;
+      tail=tempNode;
+      size--;
+      return;
+    }
+    else{
+      Node tempNode=head;
+      for(int i=0;i<location-1;i++){
+        tempNode=tempNode.next;
+      }
+      tempNode.next=tempNode.next.next;
+      size--;
+      return;
+    }
+  }
+
+  //delete csll
+  public void deleteCSLL(){
+    if(head==null){
+      System.out.println("CSLL does not exist.");
+    }
+    else{
+      head=null;
+      tail.next=null;
+      tail=null;
+      System.out.println("CSLL TERMINATED SUCCESSFULLY. HAHA");
     }
   }
 }
